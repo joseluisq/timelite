@@ -1,0 +1,23 @@
+{
+  "name": "timelite",
+  "description": "String time utilities with ease",
+  "repository": "joseluisq/timelite",
+  "version": "0.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "name": "José Luis Quintana",
+    "url": "http://git.io/joseluisq"
+  },
+  "keywords": [ "time", "time string", "format", "add times", "subtraction times", "time utilities" ],
+  "devDependencies": {
+    "jasmine": "^3.0.0",
+    "jasmine-spec-reporter": "^4.2.1",
+    "nodemon": "^1.14.12",
+    "standard": "^10.0.3"
+  },
+  "scripts": {
+    "debug": "nodemon --inspect index.js",
+    "test": "jasmine"
+  }
+}
