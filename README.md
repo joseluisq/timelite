@@ -1,4 +1,4 @@
-# Timelite
+# Timelite [![Build Status](https://travis-ci.org/joseluisq/timelite.svg?branch=master)](https://travis-ci.org/joseluisq/timelite)
 
 > String time utilities with ease.
 
