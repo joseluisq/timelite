@@ -1,6 +1,6 @@
 {
   "name": "timelite",
-  "description": "String time utilities with ease",
+  "description": "String date and time utilities",
   "repository": "joseluisq/timelite",
   "version": "0.0.1-0",
   "main": "index.js",
@@ -9,7 +9,16 @@
     "name": "José Luis Quintana",
     "url": "http://git.io/joseluisq"
   },
-  "keywords": [ "time", "time string", "format", "add times", "subtraction times", "time utilities" ],
+  "keywords": [
+    "time",
+    "time string",
+    "format",
+    "add times",
+    "subtraction times",
+    "time utilities",
+    "date",
+    "date utilities"
+  ],
   "devDependencies": {
     "jasmine": "^3.0.0",
     "jasmine-spec-reporter": "^4.2.1",
