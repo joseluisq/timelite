@@ -1,1 +1,8 @@
 node_modules
+*.log
+node_modules
+coverage
+dist
+**/.DS_Store
+lib
+.cache

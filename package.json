@@ -9,14 +9,7 @@
     "name": "José Luis Quintana",
     "url": "http://git.io/joseluisq"
   },
-  "keywords": [
-    "time",
-    "time string",
-    "format",
-    "add times",
-    "subtraction times",
-    "time utilities"
-  ],
+  "keywords": [ "time", "time string", "format", "add times", "subtraction times", "time utilities" ],
   "devDependencies": {
     "jasmine": "^3.0.0",
     "jasmine-spec-reporter": "^4.2.1",

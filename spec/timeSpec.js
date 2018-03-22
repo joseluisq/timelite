@@ -1,6 +1,6 @@
-const { add, str } = require('../')
+const { add, str } = require('../time')
 
-describe('Timelite', () => {
+describe('Timelite: Time', () => {
   describe('add', () => {
     it('should return an array with zeros if params were unprovided', () => {
       expect(add()).toEqual([ 0, 0, 0 ])
