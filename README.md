@@ -88,10 +88,10 @@ normalize('0-02-31')
 
 #### str
 
-Format an array date values into string date.
+Format an array date values into a valid string date.
 
 ```js
-const { normalize } = require('timelite/date')
+const { str } = require('timelite/date')
 
 str([ 0, 0, 0 ])
 // 2000-01-01
