@@ -15,7 +15,7 @@ __Time__
 __Date__
 
 - [x] `normalize` : Normalize string date values returning a valid date as an unsigned integer array.
-- [x] `str` : Format an array date values into string date.
+- [x] `str` : Format an array date values into a valid string date.
 
 ## Install
 
