@@ -2,8 +2,6 @@
 
 > String date and time utilities.
 
-__Note:__ This project is "Work In Progress" yet.
-
 ## API
 
 __Time__
