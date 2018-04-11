@@ -8,7 +8,7 @@ __Time__
 
 - [x] `add` : Add an array of string times. Eg. `add(['04:20:10', '21:15:10'])`
 - [x] `str` : Format an array of time values into string time. Eg. `str([12, 0, 45])` > `"12:00:45"`
-- [ ] `sub` : Subtract an array of string times. Eg. `add(['04:20:10', '21:15:10'])`
+- [ ] `sub` : Subtract an array of string times. Eg. `sub(['04:20:10', '21:15:10'])`
 
 __Date__
 
