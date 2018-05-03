@@ -3,7 +3,6 @@
   "description": "String date and time utilities",
   "repository": "joseluisq/timelite",
   "version": "0.0.2-0",
-  "main": "index.js",
   "license": "MIT",
   "author": {
     "name": "José Luis Quintana",
@@ -19,20 +18,48 @@
     "date",
     "date utilities"
   ],
+  "main": "./dist/index.js",
+  "typings": [
+    "./dist/index.d.ts",
+    "./dist/time.d.ts",
+    "./dist/date.d.ts",
+    "./dist/utils.d.ts"
+  ],
+  "files": [
+    "./dist",
+    "README.md",
+    "LICENSE.md"
+  ],
   "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-config-standard": "^11.0.0",
-    "eslint-plugin-import": "^2.10.0",
-    "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-promise": "^3.7.0",
-    "eslint-plugin-standard": "^3.0.1",
+    "@types/jasmine": "^2.8.7",
+    "@types/node": "^10.0.3",
     "jasmine": "^3.0.0",
+    "jasmine-core": "^3.1.0",
     "jasmine-spec-reporter": "^4.2.1",
-    "nodemon": "^1.14.12",
-    "standard": "^10.0.3"
+    "karma": "^2.0.2",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.2",
+    "karma-jasmine-html-reporter": "^1.0.0",
+    "karma-spec-reporter": "^0.0.32",
+    "karma-typescript": "^3.0.12",
+    "rollup": "^0.58.2",
+    "tslint": "^5.9.1",
+    "tslint-config-standard-plus": "^1.0.0",
+    "typescript": "^2.8.3",
+    "uglify-js": "^3.3.23"
   },
   "scripts": {
-    "debug": "nodemon --inspect index.js",
-    "test": "jasmine"
+    "version": "npm run build",
+    "build": "npm run test && npm run clean && npm run compile && npm run minify:browser",
+    "compile": "npm run compile:es6 && npm run compile:browser && npm run compile:cjs",
+    "compile:es6": "tsc --module es2015",
+    "compile:cjs": "tsc --module commonjs",
+    "compile:browser": "rollup -c && npm run minify:browser",
+    "minify:browser": "uglifyjs dist/${npm_package_name}.umd.js -cm --source-map -o dist/${npm_package_name}.umd.min.js",
+    "watch": "tsc --watch",
+    "clean": "rm -rf dist",
+    "test": "npm run lint && karma start --single-run --reporters spec",
+    "test:watch": "karma start",
+    "lint": "tslint --format stylish --project tsconfig.json"
   }
 }

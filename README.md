@@ -38,7 +38,7 @@ npm install timelite --save-dev
 Add an array of string time values "HH:mm:ss".
 
 ```js
-const { add } = require('timelite/time')
+import { add } from 'timelite/time'
 
 add(['04:20:10', '21:15:10'])
 // "25:35:20"
@@ -55,7 +55,7 @@ add(['19:30:00', '00:30:00'])
 Format an array time values into string time.
 
 ```js
-const { str } = require('timelite/time')
+import { str } from 'timelite/time'
 
 str([12, 10, 45])
 // "12:10:45"
@@ -72,7 +72,7 @@ str([7, 22])
 Normalize string date values returning a valid date as an unsigned integer array.
 
 ```js
-const { normalize } = require('timelite/date')
+import { normalize } from 'timelite/date'
 
 normalize('1980-09-02')
 // [ 1980, 9, 2 ]
@@ -89,7 +89,7 @@ normalize('0-02-31')
 Format an array date values into a valid string date.
 
 ```js
-const { str } = require('timelite/date')
+import { str } from 'timelite/date'
 
 str([ 0, 0, 0 ])
 // 2000-01-01
