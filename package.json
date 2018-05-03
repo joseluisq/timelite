@@ -2,7 +2,7 @@
   "name": "timelite",
   "description": "String date and time utilities",
   "repository": "joseluisq/timelite",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "license": "MIT",
   "author": {
     "name": "José Luis Quintana",
@@ -26,7 +26,9 @@
     "./dist/utils.d.ts"
   ],
   "files": [
-    "./dist/**/*",
+    "./dist/*.js",
+    "./dist/*.ts",
+    "./dist/*.map",
     "README.md",
     "LICENSE.md"
   ],
