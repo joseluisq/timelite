@@ -1,12 +1,18 @@
-import { name as pkgName } from "./package.json";
+import { name, index } from "./package.json";
+import rollupTypescript from "rollup-plugin-typescript2";
 
 export default {
-  entry: 'dist/index.js',
-  dest: `dist/${pkgName}.umd.js`,
-  format: 'umd',
-  sourceMap: true,
-  moduleName: pkgName,
-  exports: 'named',
+  input: './src/index.ts',
+  name: 'timelite',
+  output: {
+    file: './timelite.umd.js',
+    format: 'umd',
+    sourcemap: true,
+    exports: 'named'
+  },
+  plugins: [
+    rollupTypescript()
+  ],
   onwarn
 }
 

@@ -1,1 +1,5 @@
-!dist
+!/*.js
+!/*.map
+!/*.d.ts
+!/README.md
+!/LICENSE.md

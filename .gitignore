@@ -6,3 +6,7 @@ dist
 **/.DS_Store
 lib
 .cache
+/*.js
+/*.map
+/*.d.ts
+.*_cache

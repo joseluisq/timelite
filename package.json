@@ -18,18 +18,7 @@
     "date",
     "date utilities"
   ],
-  "main": "./dist/index.js",
-  "typings": [
-    "./dist/index.d.ts",
-    "./dist/time.d.ts",
-    "./dist/date.d.ts",
-    "./dist/utils.d.ts"
-  ],
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE.md"
-  ],
+  "main": "index.js",
   "devDependencies": {
     "@types/jasmine": "^2.8.7",
     "@types/node": "^10.0.3",
@@ -43,6 +32,7 @@
     "karma-spec-reporter": "^0.0.32",
     "karma-typescript": "^3.0.12",
     "rollup": "^0.58.2",
+    "rollup-plugin-typescript2": "^0.13.0",
     "tslint": "^5.9.1",
     "tslint-config-standard-plus": "^1.0.0",
     "typescript": "^2.8.3",
@@ -51,11 +41,10 @@
   "scripts": {
     "version": "npm run build",
     "build": "npm run test && npm run clean && npm run compile && npm run minify:browser",
-    "compile": "npm run compile:es6 && npm run compile:browser && npm run compile:cjs",
-    "compile:es6": "tsc --module es2015",
-    "compile:cjs": "tsc --module commonjs",
+    "compile": "npm run compile:browser && npm run compile:cjs",
+    "compile:cjs": "tsc --module commonjs --target es5",
     "compile:browser": "rollup -c && npm run minify:browser",
-    "minify:browser": "uglifyjs dist/${npm_package_name}.umd.js -cm --source-map -o dist/${npm_package_name}.umd.min.js",
+    "minify:browser": "uglifyjs ${npm_package_name}.umd.js -cm --source-map -o ${npm_package_name}.umd.min.js",
     "watch": "tsc --watch",
     "clean": "rm -rf dist",
     "test": "npm run lint && karma start --single-run --reporters spec",

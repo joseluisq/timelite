@@ -9,7 +9,7 @@
     "node_modules"
   ],
   "compilerOptions": {
-    "outDir": "./dist",
+    "outDir": "./",
     "sourceMap": true,
     "declaration": true,
     "noImplicitAny": true,
@@ -21,7 +21,7 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "module": "commonjs",
+    "module": "ES2015",
     "target": "es5",
     "typeRoots": [
       "node_modules/@types"
