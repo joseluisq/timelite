@@ -8,6 +8,10 @@
     "name": "José Luis Quintana",
     "url": "http://git.io/joseluisq"
   },
+  "files": [
+    "README.md",
+    "LICENSE.md"
+  ],
   "keywords": [
     "time",
     "time string",
