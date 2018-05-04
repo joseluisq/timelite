@@ -1,11 +1,11 @@
-import { name, index } from "./package.json";
+import { name } from "./package.json";
 import rollupTypescript from "rollup-plugin-typescript2";
 
 export default {
   input: './src/index.ts',
-  name: 'timelite',
+  name,
   output: {
-    file: './timelite.umd.js',
+    file: `./${name}.umd.js`,
     format: 'umd',
     sourcemap: true,
     exports: 'named'
