@@ -9,6 +9,10 @@
     "url": "http://git.io/joseluisq"
   },
   "files": [
+    "index.js",
+    "/*.js",
+    "/*.map",
+    "/*.d.ts",
     "README.md",
     "LICENSE.md"
   ],
