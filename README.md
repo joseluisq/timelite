@@ -29,6 +29,14 @@ yarn add timelite --dev
 npm install timelite --save-dev
 ```
 
+[UMD](https://github.com/umdjs/umd/) file is also available on [unpkg](https://unpkg.com):
+
+```html
+<script src="https://unpkg.com/timelite/timelite.umd.min.js"></script>
+```
+
+You can use the library via `window.timelite`.
+
 ## Usage
 
 ### Time
