@@ -10,7 +10,7 @@ const DATE_SEPARATOR: string = '-'
  * @param number len
  * @returns string
  */
-function zeroPad(value: number | string = '', len: number = 2): string {
+function zeroPad (value: number | string = '', len: number = 2): string {
   let str: string = value.toString()
 
   if (str.length < len) {
