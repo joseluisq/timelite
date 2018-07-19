@@ -1,7 +1,7 @@
-const DATETIME: number[] = [ 0, 0, 0 ]
-const DATETIME_LEN: number = DATETIME.length
-const TIME_SEPARATOR: string = ':'
-const DATE_SEPARATOR: string = '-'
+export const DATETIME: number[] = [ 0, 0, 0 ]
+export const DATETIME_LEN: number = DATETIME.length
+export const TIME_SEPARATOR: string = ':'
+export const DATE_SEPARATOR: string = '-'
 
 /**
  * Pad a single string time value with zeros. Eg. "5" to "05".
@@ -10,7 +10,7 @@ const DATE_SEPARATOR: string = '-'
  * @param number len
  * @returns string
  */
-function zeroPad (value: number | string = '', len: number = 2): string {
+export function zeroPad (value: number | string = '', len: number = 2): string {
   let str: string = value.toString()
 
   if (str.length < len) {
@@ -31,7 +31,7 @@ function zeroPad (value: number | string = '', len: number = 2): string {
  * @param string divider String character or RegEx used to separate the string. E.g. ":" (Time) or "-" (Date)
  * @returns number[]
  */
-function splitDateTime (str: string, divider: string): number[] {
+export function splitDateTime (str: string, divider: string): number[] {
   const strTime: string[] = str.split(divider)
   const intTime: number[] = []
 
@@ -49,7 +49,7 @@ function splitDateTime (str: string, divider: string): number[] {
  * @param string joiner String character used to join the string. E.g. ":" (Time) or "-" (Date)
  * @returns string String time format.
  */
-function formatDateTime (timeInts: number[], joiner: string): string {
+export function formatDateTime (timeInts: number[], joiner: string): string {
   const intTime: number[] = Array.isArray(timeInts) ? timeInts : [ timeInts ]
   const intTimeLen: number = intTime.length
   const strTime: string[] = []
@@ -75,21 +75,10 @@ function formatDateTime (timeInts: number[], joiner: string): string {
  * @param number month
  * @returns number
  */
-function getDaysInMonth (year: number, month: number): number {
+export function getDaysInMonth (year: number, month: number): number {
   const ndate: Date = new Date(0)
   ndate.setFullYear(year, month, 0)
   ndate.setHours(0, 0, 0, 0)
 
   return ndate.getDate()
-}
-
-export {
-  DATETIME,
-  DATETIME_LEN,
-  TIME_SEPARATOR,
-  DATE_SEPARATOR,
-  zeroPad,
-  splitDateTime,
-  formatDateTime,
-  getDaysInMonth
 }

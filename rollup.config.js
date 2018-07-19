@@ -1,17 +1,19 @@
 import { name } from "./package.json";
-import rollupTypescript from "rollup-plugin-typescript2";
+import typescript from "rollup-plugin-typescript2";
+import { terser } from "rollup-plugin-terser";
 
 export default {
-  input: './src/index.ts',
+  input: 'src/index.ts',
   name,
   output: {
-    file: `./${name}.umd.js`,
+    file: `./${name}.umd.min.js`,
     format: 'umd',
-    sourcemap: true,
+    sourcemap: false,
     exports: 'named'
   },
   plugins: [
-    rollupTypescript()
+    typescript(),
+    terser()
   ],
   onwarn
 }

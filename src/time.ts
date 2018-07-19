@@ -1,10 +1,4 @@
-import {
-  splitDateTime,
-  formatDateTime,
-  DATETIME,
-  DATETIME_LEN,
-  TIME_SEPARATOR
-} from './utils'
+import { DATETIME, DATETIME_LEN, formatDateTime, splitDateTime, TIME_SEPARATOR } from './utils'
 
 /**
  * Add an array of string time values "HH:mm:ss".
@@ -22,7 +16,7 @@ import {
  * @param string[] arr Array of string times to add
  * @returns number[] Time result in array format. E.g [5, 0, 0]
  */
-function add (arr: string[]): number[] {
+export function add (arr: string[]): number[] {
   const intTimes: string[] = Array.isArray(arr) ? arr : [ arr ]
   const lenArr: number = intTimes.length
   const times: number[] = DATETIME.slice(0)
@@ -60,7 +54,7 @@ function add (arr: string[]): number[] {
  * @param number[] arr Array of times to format. E.g. [12, 10, 45]
  * @returns string String time format.
  */
-function str (arr: number[]): string {
+export function str (arr: number[]): string {
   return formatDateTime(arr, TIME_SEPARATOR)
 }
 
@@ -70,7 +64,7 @@ function str (arr: number[]): string {
  * @param string[] arr
  * @returns number[]
  */
-function sub (arr: string[]): number[] {
+export function sub (arr: string[]): number[] {
   const intTimes: string[] = Array.isArray(arr) ? arr : [ arr ]
   const lenArr: number = intTimes.length
   const times: number[] = DATETIME.slice(0)
@@ -92,10 +86,4 @@ function sub (arr: string[]): number[] {
   const seconds: number = times[2]
 
   return [ hours, minutes, seconds ]
-}
-
-export {
-  add,
-  sub,
-  str
 }

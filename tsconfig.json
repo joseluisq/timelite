@@ -10,7 +10,7 @@
   ],
   "compilerOptions": {
     "outDir": "./",
-    "sourceMap": true,
+    "sourceMap": false,
     "declaration": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
@@ -32,7 +32,6 @@
     ],
     "lib": [
       "es2017",
-      "dom",
       "es2015.generator",
       "es2015.iterable",
       "es2015.promise",

@@ -1,4 +1,4 @@
-import { DATE_SEPARATOR, splitDateTime, getDaysInMonth, formatDateTime } from './utils'
+import { DATE_SEPARATOR, formatDateTime, getDaysInMonth, splitDateTime } from './utils'
 
 /**
  * Normalize string date values returning times valid date as an unsigned integer array.
@@ -6,7 +6,7 @@ import { DATE_SEPARATOR, splitDateTime, getDaysInMonth, formatDateTime } from '.
  * @param string str
  * @returns number[]
  */
-function normalize (str: string): number[] {
+export function normalize (str: string): number[] {
   const cyear: number = new Date().getFullYear()
   const parts: number[] = splitDateTime(str, DATE_SEPARATOR)
 
@@ -48,9 +48,7 @@ function normalize (str: string): number[] {
  * @param number[] arr Array of times to format. E.g. [2018, 12, 3]
  * @returns string String time format.
  */
-function str (arr: number[]): string {
+export function str (arr: number[]): string {
   const times: number[] = normalize(formatDateTime(arr, DATE_SEPARATOR))
   return formatDateTime(times, DATE_SEPARATOR)
 }
-
-export { normalize, str }
