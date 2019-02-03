@@ -7,8 +7,8 @@
 __Time__
 
 - [x] `add` : Add an array of string times. Eg. `add(['04:20:10', '21:15:10'])`
-- [x] `str` : Format an array of time values into string time. Eg. `str([12, 0, 45])` > `"12:00:45"`
-- [ ] `sub` : Subtract an array of string times. Eg. `sub(['04:20:10', '21:15:10'])`
+- [x] `str` : Format an array of time values into string time. Eg. `str([12, 0, 45])` => `[ 12, 00, 45 ]`
+- [x] `sub` : Subtract an array of string times. Eg. `sub(['20:05:10', '10:10:50'])` => `[ 9, 54, 20 ]`
 
 __Date__
 
@@ -49,13 +49,26 @@ Add an array of string time values "HH:mm:ss".
 import { add } from 'timelite/time'
 
 add(['04:20:10', '21:15:10'])
-// "25:35:20"
+// [ 25, 35, 2 ]
 add(['04:35:10', '21:35:10'])
-// "26:10:20"
+// [ 26, 10, 2 ]
 add(['30:59', '17:10'])
-// "48:09:00"
+// [ 48, 09, 0 ]
 add(['19:30:00', '00:30:00'])
-// "20:00:00"
+// [ 20, 00, 0 ]
+```
+
+#### sub
+
+Subtract an array of string time values "HH:mm:ss".
+
+```js
+import { sub } from 'timelite/time'
+
+sub(['20:40:10', '20:10:50'])
+// [ 0, 29, 20 ]
+sub(['20:05:10', '10:10:50'])
+// [ 9, 54, 20 ]
 ```
 
 #### str

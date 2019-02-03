@@ -21,10 +21,10 @@ module.exports = (config) => {
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
-    files: [{ pattern: 'src/**/*.ts' }, { pattern: 'test/**/*.spec.ts' }],
+    files: [{ pattern: 'src/**/*.ts' }, { pattern: 'tests/**/*.spec.ts' }],
     preprocessors: {
       '**/*.ts': ['karma-typescript'],
-      'test/**/*.spec.ts': ['karma-typescript']
+      'tests/**/*.spec.ts': ['karma-typescript']
     },
     reporters: ['progress', 'kjhtml'],
     colors: true,

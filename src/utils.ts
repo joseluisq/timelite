@@ -1,7 +1,7 @@
 export const DATETIME: number[] = [ 0, 0, 0 ]
 export const DATETIME_LEN: number = DATETIME.length
-export const TIME_SEPARATOR: string = ':'
-export const DATE_SEPARATOR: string = '-'
+export const TIME_SEPARATOR = ':'
+export const DATE_SEPARATOR = '-'
 
 /**
  * Pad a single string time value with zeros. Eg. "5" to "05".
@@ -10,7 +10,7 @@ export const DATE_SEPARATOR: string = '-'
  * @param number len
  * @returns string
  */
-export function zeroPad (value: number | string = '', len: number = 2): string {
+export function zeroPad (value: number | string = '', len = 2): string {
   let str: string = value.toString()
 
   if (str.length < len) {
@@ -35,7 +35,7 @@ export function splitDateTime (str: string, divider: string): number[] {
   const strTime: string[] = str.split(divider)
   const intTime: number[] = []
 
-  for (let i: number = 0; i < DATETIME_LEN; i++) {
+  for (let i = 0; i < DATETIME_LEN; i++) {
     intTime[i] = isNaN(parseInt(strTime[i], 10)) ? 0 : parseInt(strTime[i], 10)
   }
 
@@ -55,12 +55,13 @@ export function formatDateTime (timeInts: number[], joiner: string): string {
   const strTime: string[] = []
   const timeBase: number[] = DATETIME.slice(0)
 
-  for (let i: number = 0; i < intTimeLen; i++) {
+  for (let i = 0; i < intTimeLen; i++) {
     timeBase[i] = isNaN(intTime[i]) ? 0 : intTime[i]
   }
 
   let len: number
-  for (let i: number = 0; i < DATETIME_LEN; i++) {
+
+  for (let i = 0; i < DATETIME_LEN; i++) {
     len = joiner === DATE_SEPARATOR && i === 0 ? 4 : 2
     strTime[i] = zeroPad(timeBase[i].toString(), len)
   }

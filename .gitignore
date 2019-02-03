@@ -9,4 +9,5 @@ lib
 /*.js
 /*.map
 /*.d.ts
+/*.php
 .*_cache
