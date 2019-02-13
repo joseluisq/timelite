@@ -8,7 +8,7 @@ __Timelite__ works in the top of [Datetime Strings (ISO 8601)](https://es.wikipe
 
 ## API
 
-At this the API point is quite limited (see below) but feel free to contribute.
+For now, the API is quite limited (see below) but feel free to contribute.
 
 __Time__
 
