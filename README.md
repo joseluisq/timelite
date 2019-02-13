@@ -1,8 +1,14 @@
 # Timelite [![Build Status](https://travis-ci.org/joseluisq/timelite.svg?branch=master)](https://travis-ci.org/joseluisq/timelite) [![npm](https://img.shields.io/npm/v/timelite.svg)](https://www.npmjs.com/package/timelite) [![npm](https://img.shields.io/npm/dt/timelite.svg)](https://www.npmjs.com/package/timelite) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-> String date and time utilities.
+> String date and time utilities. :clock10:
+
+## Overview
+
+__Timelite__ works in the top of [Datetime Strings (ISO 8601)](https://es.wikipedia.org/wiki/ISO_8601), recieving one array of string datetimes and returning one array of [Unsigned Datetime Integers](https://en.wikipedia.org/wiki/Signedness). This makes it a compact and faster library if you are problably thinking about [why not around Date](https://codeofmatt.com/javascript-date-type-is-horribly-broken/).
 
 ## API
+
+At this the API point is quite limited (see below) but feel free to contribute.
 
 __Time__
 
