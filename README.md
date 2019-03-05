@@ -19,7 +19,7 @@ __Time__
 __Date__
 
 - [x] `normalize` : Normalize string date values returning a valid date as an unsigned integer array. E.g. `normalize('0-02-31')` => `[ 2000, 2, 28 ]`
-- [x] `str` : Format an array date values into a valid string date. E.g. `sub([0, 0, 0])` => `'2000-01-01'`
+- [x] `str` : Format an array date values into a valid string date. E.g. `str([0, 0, 0])` => `'2000-01-01'`
 
 ## Install
 
