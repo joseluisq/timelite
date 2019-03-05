@@ -12,14 +12,14 @@ For now, the API is quite limited but feel free to contribute.
 
 __Time__
 
-- [x] `add` : Add an array of string times. Eg. `add(['04:20:10', '21:15:10'])`
-- [x] `str` : Format an array of time values into string time. Eg. `str([12, 0, 45])` => `[ 12, 00, 45 ]`
-- [x] `sub` : Subtract an array of string times. Eg. `sub(['20:05:10', '10:10:50'])` => `[ 9, 54, 20 ]`
+- [x] `add` : Add an array of string times. E.g. `add(['04:20:10', '21:15:10'])` => `[ 25, 35, 2 ]`
+- [x] `str` : Format an array of time values into string time. E.g. `str([12, 10, 45])` => `12:10:45`
+- [x] `sub` : Subtract an array of string times. E.g. `sub(['20:40:10', '20:10:50'])` => `[ 0, 29, 20 ]`
 
 __Date__
 
-- [x] `normalize` : Normalize string date values returning a valid date as an unsigned integer array.
-- [x] `str` : Format an array date values into a valid string date.
+- [x] `normalize` : Normalize string date values returning a valid date as an unsigned integer array. E.g. `normalize('0-02-31')` => `[ 2000, 2, 28 ]`
+- [x] `str` : Format an array date values into a valid string date. E.g. `sub([0, 0, 0])` => `'2000-01-01'`
 
 ## Install
 
