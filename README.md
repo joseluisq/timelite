@@ -4,7 +4,7 @@
 
 ## Overview
 
-__Timelite__ works in the top of [Datetime Strings (ISO 8601)](https://es.wikipedia.org/wiki/ISO_8601), recieving one array of string datetimes and returning one array of [Unsigned Datetime Integers](https://en.wikipedia.org/wiki/Signedness). This makes it a portable, compact and faster library if you are problably thinking about [why not around Date](https://codeofmatt.com/javascript-date-type-is-horribly-broken/).
+__Timelite__ works in the top of [Datetime Strings (ISO 8601)](https://es.wikipedia.org/wiki/ISO_8601), receiving one array of string datetimes and returning one array of [Unsigned Datetime Integers](https://en.wikipedia.org/wiki/Signedness). This makes it a portable, compact and faster library if you are probably thinking about [why not around Date](https://codeofmatt.com/javascript-date-type-is-horribly-broken/).
 
 ## API
 
