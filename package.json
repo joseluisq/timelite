@@ -28,7 +28,7 @@
   "main": "index.js",
   "devDependencies": {
     "@types/jasmine": "3.3.8",
-    "@types/node": "10.12.21",
+    "@types/node": "10.14.6",
     "jasmine": "3.3.1",
     "jasmine-core": "3.3.0",
     "jasmine-spec-reporter": "4.2.1",
