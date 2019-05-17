@@ -40,7 +40,7 @@
     "karma-typescript": "3.0.13",
     "rollup": "1.11.3",
     "rollup-plugin-terser": "4.0.4",
-    "rollup-plugin-typescript2": "0.21.0",
+    "rollup-plugin-typescript2": "0.21.1",
     "terser": "3.16.0",
     "tslint": "5.16.0",
     "tslint-config-standard-plus": "2.1.3",
