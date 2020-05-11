@@ -1,7 +1,7 @@
-import * as date from './date'
-import * as time from './time'
+import * as date from "./date"
+import * as time from "./time"
 
 export {
-  date,
-  time
+    date,
+    time
 }

@@ -1,4 +1,4 @@
-import { DATETIME, DATETIME_LEN, formatDateTime, splitDateTime, TIME_SEPARATOR } from './utils'
+import { DATETIME, DATETIME_LEN, formatDateTime, splitDateTime, TIME_SEPARATOR } from "./utils"
 
 /**
  * Add an array of string time values "HH:mm:ss".
@@ -17,35 +17,35 @@ import { DATETIME, DATETIME_LEN, formatDateTime, splitDateTime, TIME_SEPARATOR }
  * @returns number[] Time result in array format. E.g [5, 0, 0]
  */
 export function add (arr: string[]): number[] {
-  const intTimes: string[] = Array.isArray(arr) ? arr : [ arr ]
-  const lenArr: number = intTimes.length
-  const times: number[] = DATETIME.slice(0)
+    const intTimes: string[] = Array.isArray(arr) ? arr : [ arr ]
+    const lenArr: number = intTimes.length
+    const times: number[] = DATETIME.slice(0)
 
-  for (let i = 0; i < lenArr; i++) {
-    const time: number[] = splitDateTime(intTimes[i], TIME_SEPARATOR)
+    for (let i = 0; i < lenArr; i++) {
+        const time: number[] = splitDateTime(intTimes[i], TIME_SEPARATOR)
 
-    for (let e = 0; e < DATETIME_LEN; e++) {
-      times[e] += time[e]
+        for (let e = 0; e < DATETIME_LEN; e++) {
+            times[e] += time[e]
+        }
     }
-  }
 
-  let hours: number = times[0]
-  let minutes: number = times[1]
-  let seconds: number = times[2]
+    let hours: number = times[0]
+    let minutes: number = times[1]
+    let seconds: number = times[2]
 
-  if (seconds >= 60) {
-    const m: number = (seconds / 60) << 0
-    minutes += m
-    seconds -= 60 * m
-  }
+    if (seconds >= 60) {
+        const m: number = (seconds / 60) << 0
+        minutes += m
+        seconds -= 60 * m
+    }
 
-  if (minutes >= 60) {
-    const h: number = (minutes / 60) << 0
-    hours += h
-    minutes -= 60 * h
-  }
+    if (minutes >= 60) {
+        const h: number = (minutes / 60) << 0
+        hours += h
+        minutes -= 60 * h
+    }
 
-  return [ hours, minutes, seconds ]
+    return [ hours, minutes, seconds ]
 }
 
 /**
@@ -55,7 +55,7 @@ export function add (arr: string[]): number[] {
  * @returns string String time format.
  */
 export function str (arr: number[]): string {
-  return formatDateTime(arr, TIME_SEPARATOR)
+    return formatDateTime(arr, TIME_SEPARATOR)
 }
 
 /**
@@ -71,47 +71,47 @@ export function str (arr: number[]): string {
  * @returns number[]
  */
 export function sub (arr: string[]): number[] {
-  const intTimes = Array.isArray(arr) ? arr : [ arr ]
-  const lenArr = intTimes.length
-  const times = DATETIME.slice(0)
+    const intTimes = Array.isArray(arr) ? arr : [ arr ]
+    const lenArr = intTimes.length
+    const times = DATETIME.slice(0)
 
-  let prev = 0
+    let prev = 0
 
-  for (let i = 0; i < lenArr; i++) {
-    const time = splitDateTime(intTimes[i], TIME_SEPARATOR)
+    for (let i = 0; i < lenArr; i++) {
+        const time = splitDateTime(intTimes[i], TIME_SEPARATOR)
 
-    for (let e = DATETIME_LEN - 1; e > -1; e--) {
-      const unit = time[e]
+        for (let e = DATETIME_LEN - 1; e > -1; e--) {
+            const unit = time[e]
 
-      // first time value
-      if (!i) {
-        times[e] = unit
-      } else {
-        // prev value (minor)
-        if (times[e] < unit) {
-          // 60's formula
-          if (times[0] === time[0] && times[1] === time[1]) {
-            times[e] = 60 - ((60 - unit) + times[e])
-          } else {
-            times[e] = (60 - unit) + times[e]
+            // first time value
+            if (!i) {
+                times[e] = unit
+            } else {
+                // prev value (minor)
+                if (times[e] < unit) {
+                // 60's formula
+                    if (times[0] === time[0] && times[1] === time[1]) {
+                        times[e] = 60 - ((60 - unit) + times[e])
+                    } else {
+                        times[e] = (60 - unit) + times[e]
 
-            if (prev) {
-              times[e] -= prev
+                        if (prev) {
+                            times[e] -= prev
+                        }
+                    }
+
+                    prev = 1
+                } else {
+                    // prev value (major)
+                    times[e] = times[e] - unit
+
+                    if (times[e]) {
+                        times[e] = times[e] - prev
+                    }
+                }
             }
-          }
-
-          prev = 1
-        } else {
-          // prev value (major)
-          times[e] = times[e] - unit
-
-          if (times[e]) {
-            times[e] = times[e] - prev
-          }
         }
-      }
     }
-  }
 
-  return times
+    return times
 }

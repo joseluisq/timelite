@@ -1,4 +1,4 @@
-# Timelite [![Build Status](https://travis-ci.org/joseluisq/timelite.svg?branch=master)](https://travis-ci.org/joseluisq/timelite) [![npm](https://img.shields.io/npm/v/timelite.svg)](https://www.npmjs.com/package/timelite) [![npm](https://img.shields.io/npm/dt/timelite.svg)](https://www.npmjs.com/package/timelite) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+# Timelite [![Build Status](https://travis-ci.com/joseluisq/timelite.svg?branch=master)](https://travis-ci.com/joseluisq/timelite) [![npm](https://img.shields.io/npm/v/timelite.svg)](https://www.npmjs.com/package/timelite) [![npm](https://img.shields.io/npm/dt/timelite.svg)](https://www.npmjs.com/package/timelite) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 > String date and time utilities. :clock10:
 
@@ -26,13 +26,13 @@ __Date__
 [Yarn](https://github.com/yarnpkg/)
 
 ```sh
-yarn add timelite --dev
+yarn add timelite
 ```
 
 [NPM](https://www.npmjs.com/)
 
 ```sh
-npm install timelite --save-dev
+npm install timelite
 ```
 
 [UMD](https://github.com/umdjs/umd/) file is also available on [unpkg](https://unpkg.com):
@@ -133,4 +133,4 @@ Feel free to send some [Pull request](https://github.com/joseluisq/timelite/pull
 ## License
 MIT license
 
-© 2018-present [José Luis Quintana](http://git.io/joseluisq)
+© 2018-present [Jose Quintana](http://git.io/joseluisq)

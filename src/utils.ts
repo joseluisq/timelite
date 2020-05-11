@@ -1,7 +1,7 @@
 export const DATETIME: number[] = [ 0, 0, 0 ]
 export const DATETIME_LEN: number = DATETIME.length
-export const TIME_SEPARATOR = ':'
-export const DATE_SEPARATOR = '-'
+export const TIME_SEPARATOR = ":"
+export const DATE_SEPARATOR = "-"
 
 /**
  * Pad a single string time value with zeros. Eg. "5" to "05".
@@ -10,14 +10,14 @@ export const DATE_SEPARATOR = '-'
  * @param number len
  * @returns string
  */
-export function zeroPad (value: number | string = '', len = 2): string {
-  let str: string = value.toString()
+export function zeroPad (value: number | string = "", len = 2): string {
+    let str: string = value.toString()
 
-  if (str.length < len) {
-    str = ('0' + str.toString()).slice(-len)
-  }
+    if (str.length < len) {
+        str = ("0" + str.toString()).slice(-len)
+    }
 
-  return str
+    return str
 }
 
 /**
@@ -32,14 +32,14 @@ export function zeroPad (value: number | string = '', len = 2): string {
  * @returns number[]
  */
 export function splitDateTime (str: string, divider: string): number[] {
-  const strTime: string[] = str.split(divider)
-  const intTime: number[] = []
+    const strTime: string[] = str.split(divider)
+    const intTime: number[] = []
 
-  for (let i = 0; i < DATETIME_LEN; i++) {
-    intTime[i] = isNaN(parseInt(strTime[i], 10)) ? 0 : parseInt(strTime[i], 10)
-  }
+    for (let i = 0; i < DATETIME_LEN; i++) {
+        intTime[i] = isNaN(parseInt(strTime[i], 10)) ? 0 : parseInt(strTime[i], 10)
+    }
 
-  return intTime
+    return intTime
 }
 
 /**
@@ -50,23 +50,23 @@ export function splitDateTime (str: string, divider: string): number[] {
  * @returns string String time format.
  */
 export function formatDateTime (timeInts: number[], joiner: string): string {
-  const intTime: number[] = Array.isArray(timeInts) ? timeInts : [ timeInts ]
-  const intTimeLen: number = intTime.length
-  const strTime: string[] = []
-  const timeBase: number[] = DATETIME.slice(0)
+    const intTime: number[] = Array.isArray(timeInts) ? timeInts : [ timeInts ]
+    const intTimeLen: number = intTime.length
+    const strTime: string[] = []
+    const timeBase: number[] = DATETIME.slice(0)
 
-  for (let i = 0; i < intTimeLen; i++) {
-    timeBase[i] = isNaN(intTime[i]) ? 0 : intTime[i]
-  }
+    for (let i = 0; i < intTimeLen; i++) {
+        timeBase[i] = isNaN(intTime[i]) ? 0 : intTime[i]
+    }
 
-  let len: number
+    let len: number
 
-  for (let i = 0; i < DATETIME_LEN; i++) {
-    len = joiner === DATE_SEPARATOR && i === 0 ? 4 : 2
-    strTime[i] = zeroPad(timeBase[i].toString(), len)
-  }
+    for (let i = 0; i < DATETIME_LEN; i++) {
+        len = joiner === DATE_SEPARATOR && i === 0 ? 4 : 2
+        strTime[i] = zeroPad(timeBase[i].toString(), len)
+    }
 
-  return strTime.join(joiner)
+    return strTime.join(joiner)
 }
 
 /**
@@ -77,9 +77,9 @@ export function formatDateTime (timeInts: number[], joiner: string): string {
  * @returns number
  */
 export function getDaysInMonth (year: number, month: number): number {
-  const ndate: Date = new Date(0)
-  ndate.setFullYear(year, month, 0)
-  ndate.setHours(0, 0, 0, 0)
+    const ndate: Date = new Date(0)
+    ndate.setFullYear(year, month, 0)
+    ndate.setHours(0, 0, 0, 0)
 
-  return ndate.getDate()
+    return ndate.getDate()
 }
